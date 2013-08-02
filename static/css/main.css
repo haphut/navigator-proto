@@ -25,6 +25,28 @@
     pointer-events: auto;
 }
 
+
+
+/* Squeeze the list in to a smaller space and create zoom effect. */
+
+.zoom-list .ui-li .ui-btn-inner a.ui-link-inherit {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.zoom-list li .ui-btn-inner {
+    -moz-transition: all 80ms ease;
+    -webkit-transition: all 80ms ease;
+    -o-transition: all 80ms ease;
+    transition: all 80ms ease;
+}
+
+.zoom-list li:hover .ui-btn-inner {
+    line-height: 200%;
+}
+
+
+
 .navigator-div-icon {
     height: 100%
 }
