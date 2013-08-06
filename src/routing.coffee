@@ -461,21 +461,19 @@ display_route_result = (data) ->
 
     maxDuration = _.max(i.duration for i in data.plan.itineraries)
 
-    for index in [0, 1, 2]
+    for index, itinerary of data.plan.itineraries
         $list = $("#route-buttons-#{index}")
         $list.empty()
         $list.hide()
         $list.parent().removeClass("active")
-        if index of data.plan.itineraries
-            itinerary = data.plan.itineraries[index]
-            # Render the route both on the map and on the footer.
-            if index == 0
-                polylines = render_route_layer(itinerary, routeLayer)
-                $list.parent().addClass("active")
-            else
-                polylines = null
-            $list.css('width', itinerary.duration/maxDuration*100+"%")
-            render_route_buttons($list, itinerary, routeLayer, polylines)
+        # Render the route both on the map and on the footer.
+        if index == 0
+            polylines = render_route_layer(itinerary, routeLayer)
+            $list.parent().addClass("active")
+        else
+            polylines = null
+        $list.css('width', itinerary.duration/maxDuration*100+"%")
+        render_route_buttons($list, itinerary, routeLayer, polylines)
 
     resize_map() # adjust map height to match space left by itineraries
 
