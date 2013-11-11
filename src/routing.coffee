@@ -883,7 +883,7 @@ $(window).on 'resize', () ->
 
 # Create a new Leaflet map and set it's center point to the
 # location defined in the config.coffee
-window.map_dbg = map = L.map('map', {minZoom: citynavi.config.min_zoom, zoomControl: false, attributionControl: false})
+citynavi.map = map = L.map('map', {minZoom: citynavi.config.min_zoom, zoomControl: false, attributionControl: false})
     .setView(citynavi.config.center, citynavi.config.min_zoom)
 
 

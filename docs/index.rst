@@ -24,7 +24,7 @@ This is how City Navigator looks like in Manchester when started:
        # and wait for map tiles to finish loading
        Execute Javascript
        ...    citynavi.set_config("manchester");
-       ...    map_dbg.setView(citynavi.config.center, 10);
+       ...    citynavi.map.setView(citynavi.config.center, 10);
        Sleep  10 s
 
        Capture page screenshot  navigatorwindow.png
@@ -49,7 +49,7 @@ It automatically determines the location of the device and zooms there:
        ...            bounds = L.latLngBounds(
        ...                [lat - latAccuracy, lng - lngAccuracy],
        ...                [lat + latAccuracy, lng + lngAccuracy]);
-       ...        map_dbg.fire('locationfound', {
+       ...        citynavi.map.fire('locationfound', {
        ...            'accuracy': accuracy,
        ...            'latlng': L.latLng(lat, lng),
        ...            'bounds': bounds
