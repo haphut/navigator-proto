@@ -54,6 +54,7 @@ hsl_colors =
 
 hel_geocoder_base_url = "http://dev.hel.fi/geocoder/v1/"
 hel_servicemap_base_url = "http://www.hel.fi/palvelukarttaws/rest/v2/"
+recorder_base_url = "http://dev.hsl.fi/recorder-server/"
 
 
 # Configuration data in plain objects.
@@ -71,6 +72,8 @@ defaults =
     reittiopas_url: "http://tuukka.kapsi.fi/tmp/reittiopas.cgi?callback=?"
     osm_notes_url: "http://api.openstreetmap.org/api/0.6/notes.json"
     faye_url: "http://dev.hsl.fi:9002/faye"
+    recorder_login_url: recorder_base_url + "auth/login"
+    recorder_trace_seq_url: recorder_base_url + "trace_seqs"
 
     icon_base_path: "static/images/"
 
